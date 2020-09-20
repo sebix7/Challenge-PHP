@@ -1,6 +1,6 @@
 @extends("layout")
 
-@section("title", "Home")
+@section("title", "Posts")
 
 @section("content")
     <div class="container-fluid">
@@ -9,7 +9,11 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col"></th>
+                    <th scope="col">ID</th>
                     <th scope="col">Titulo</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Fecha de creación</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -22,7 +26,11 @@
                 @forelse($posts as $post)
                 <tr>
                     <td>@php echo $i++ @endphp</td>
+                    <td>{{$post->id}}</td>
                     <td>{{$post->titulo}}</td>
+                    <td><img src="{{URL::to('/')}}/images/{{$post->imagen}}"></td>
+                    <td>{{$post->categoria}}</td>
+                    <td>{{$post->fecha_de_creacion}}</td>
                     <td><a href="" class="btn btn-success">Ver</a></td>
                     <td><a href="" class="btn btn-primary">Editar</a></td>
                     <td><a href="" class="btn btn-danger">Eliminar</a></td>

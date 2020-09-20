@@ -14,9 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy("fecha_de_creacion", "DESC")->get();
+        $posts = Post::orderBy("fecha_de_creacion", "DESC")->limit(50)->select("id", "titulo", "imagen", "categoria", "fecha_de_creacion")->get();
 
-        return view("home", compact("posts"));
+        return view("post.index", compact("posts"));
     }
 
     /**
