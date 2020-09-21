@@ -15,11 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('titulo');
-            $table->string('contenido');
-            $table->string('imagen');
-            $table->string('categoria');
-            $table->date('fecha_de_creacion');
+            $table->string('titulo')->nullable();
+            $table->string('contenido')->nullable();
+            $table->string('imagen')->nullable();
+            $table->string('categoria')->nullable();
+            $table->date('fecha_de_creacion')->nullable();
         });
     }
 
