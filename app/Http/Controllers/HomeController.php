@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy("fecha_de_creacion", "DESC")->limit(10)->select("titulo")->get();
+        $posts = Post::orderBy("fecha_de_creacion", "DESC")->limit(10)->select("id", "titulo")->get();
 
         return view("Home", compact("posts"));
     }

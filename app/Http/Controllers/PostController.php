@@ -35,7 +35,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         $campos = request()->validate([
             "titulo" => "required",
@@ -43,7 +43,7 @@ class PostController extends Controller
         ]);
 
         Post::create($campos);
-        redirect("posts");
+        return $this->index();
     }
 
     /**
@@ -54,7 +54,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::where("id", $id)->get();
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -65,7 +66,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $id;
     }
 
     /**
