@@ -9,11 +9,11 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col" style="text-fluid">ID</th>
-                    <th scope="col" style="text-fluid">Titulo</th>
-                    <th scope="col" style="text-fluid">Imagen</th>
-                    <th scope="col" style="text-fluid">Categoria</th>
-                    <th scope="col" style="text-fluid">Fecha de creación</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Fecha de creación</th>
                 </tr>
             </thead>
             <tbody>

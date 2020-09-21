@@ -9,10 +9,10 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col" style="text-fluid">Titulo</th>
-                    <th scope="col" style="text-fluid"></th>
-                    <th scope="col" style="text-fluid"></th>
-                    <th scope="col" style="text-fluid"></th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
