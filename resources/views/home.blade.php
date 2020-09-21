@@ -9,10 +9,10 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col" style="text-fluid">Titulo</th>
+                    <th scope="col" style="text-fluid"></th>
+                    <th scope="col" style="text-fluid"></th>
+                    <th scope="col" style="text-fluid"></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,8 +23,8 @@
                 <tr>
                     <td>@php echo $i++ @endphp</td>
                     <td>{{$post->titulo}}</td>
-                    <td><a href="" class="btn btn-success">Ver</a></td>
-                    <td><a href="" class="btn btn-primary">Editar</a></td>
+                    <td><a href="{{route('post.show')}}" class="btn btn-success">Ver</a></td>
+                    <td><a href="{{route('post-edit', $post)" class="btn btn-primary">Editar</a></td>
                     <td><a href="" class="btn btn-danger">Eliminar</a></td>
                 </tr>
                 @empty
