@@ -25,7 +25,12 @@
                     <td>{{$post->titulo}}</td>
                     <td><a href="{{route('post.show', ['id'=>$post->id])}}" class="btn btn-success">Ver</a></td>
                     <td><a href="{{route('post.edit', ['id'=>$post->id])}}" class="btn btn-primary">Editar</a></td>
-                    <td><a href="" class="btn btn-danger">Eliminar</a></td>
+                    <td>
+                        <form action="{{route('post.destroy', ['id'=>$post->id])}}" method="POST">
+                            @csrf @method("DELETE")
+                            <button class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
                 @empty
                 <tr>

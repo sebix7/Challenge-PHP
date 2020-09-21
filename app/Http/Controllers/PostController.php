@@ -16,7 +16,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy("fecha_de_creacion", "DESC")->limit(50)->select("id", "titulo", "imagen", "categoria", "fecha_de_creacion")->get();
-
         return view("post.index", compact("posts"));
     }
 
@@ -86,7 +85,6 @@ class PostController extends Controller
         ]);
 
         Post::where("id", $id)->update(array("titulo" => $campos["titulo"], "contenido" => $campos["contenido"]));
-
         return $this->show($id);
     }
 
@@ -98,6 +96,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Post::destroy($id);
+        return $this->index();
     }
 }
