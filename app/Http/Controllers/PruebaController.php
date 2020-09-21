@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PruebaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy("fecha_de_creacion", "DESC")->limit(50)->select("id", "titulo", "imagen", "categoria", "fecha_de_creacion")->get();
-
-        return view("post.index", compact("posts"));
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view("post.create");
+        //
     }
 
     /**
@@ -36,15 +32,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $campos = request()->validate([
-            "titulo" => "required",
-            "contenido" => "required"
-        ]);
-
-        Post::create($campos);
-        return $this->index();
+        //
     }
 
     /**
@@ -55,8 +45,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where("id", $id)->get();
-        return view('post.show', compact('post'));
+        //
     }
 
     /**
@@ -67,8 +56,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::where("id", $id)->get();
-        return view('post.edit', compact('post'));
+        //
     }
 
     /**
@@ -78,16 +66,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $campos = request()->validate([
-            "titulo" => "required",
-            "contenido" => "required"
-        ]);
-
-        Post::where("id", $id)->update(array("titulo" => $campos["titulo"], "contenido" => $campos["contenido"]));
-
-        return $this->show($id);
+        //
     }
 
     /**

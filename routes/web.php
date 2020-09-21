@@ -17,3 +17,5 @@ Route::get("posts", "PostController@index")->name("post.index");
 Route::get("posts/crear", "PostController@create")->name("post.create");
 Route::post("posts", "PostController@store")->name("post.store");
 Route::get("posts/{id}", "PostController@show")->name("post.show");
+Route::get("posts/{id}/editar", "PostController@edit")->name("post.edit");
+Route::patch("/posts/{id}", "PostController@update")->name("post.update");
