@@ -4,7 +4,7 @@
 
 @section("content")
     <div class='container-fluid'>
-        @forelse($post as $campo)
+        @foreach($post as $campo)
         <h1 class='h2 mt-3'>ID DEL POST: <strong>{{$campo->id}}</strong></h1>
         <div class='jumbotron text-center bg-light mt-3' style='margin-bottom:0'>
             <div class='row no-gutters'>
@@ -20,10 +20,6 @@
                 </div>
             </div>
         </div>
-        @empty
-        <div class="alert alert-danger text-center mt-3">
-            No existe ningún post con este ID.
-        </div>
-        @endforelse
+        @endforeach
     </div>
 @endsection

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Facade\FlareClient\Http\Response;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -39,9 +38,10 @@ class PostController extends Controller
     {
         $campos = request()->validate([
             "titulo" => "required",
-            "contenido" => "required"
+            "categoria" => "required",
+            "contenido" => "required",
+            "fecha_de_creacion" => "required|date"
         ]);
-
         Post::create($campos);
         return $this->index();
     }
@@ -81,9 +81,10 @@ class PostController extends Controller
     {
         $campos = request()->validate([
             "titulo" => "required",
-            "contenido" => "required"
+            "categoria" => "required",
+            "contenido" => "required",
+            "fecha_de_creacion" => "required|date"
         ]);
-
         Post::where("id", $id)->update(array("titulo" => $campos["titulo"], "contenido" => $campos["contenido"]));
         return $this->show($id);
     }
